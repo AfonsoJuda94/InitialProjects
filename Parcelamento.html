@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="estilo.css">
+        <script>
+            function simular_parcelamento(){
+                let v_produto = parseInt(document.getElementById("valor-produto").value);
+                let n_parcelas = parseInt(document.getElementById("text-parcelas").value);
+                let divp = document.getElementById("div-parcelas");
+                if(n_parcelas>5){
+                    v_produto = v_produto+0.1*v_produto;
+                }
+                let valor_parcela = v_produto/n_parcelas;
+
+                divp.innerHTML = '<table id="tabela"></table>';
+                let tabela = document.getElementById("tabela");
+                tabela.innerHTML += '<tr><th>Parcela</th><th>Valor</th></th>';
+                for(var i =1;i<=n_parcelas;i++){
+                    tabela.innerHTML += '<tr><td>'+i+'</td><td>'+valor_parcela+'</td></tr>';
+                } 
+            }
+        </script>
+    </head>
+    <body>
+        <form action="">
+            <div>
+                <h3>SIMULAR PARCELAMENTO</h3>
+                <input type="text" id="valor-produto" placeholder="Valor do produto">
+                <input type="text" id="text-parcelas" placeholder="Número de parcelas">
+                <input type="button" value="Simular" onclick="simular_parcelamento()">
+                <div id="div-parcelas"></div>
+            </div>
+        </form>
+    </body>
+</html>

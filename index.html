@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="est.css">
+        <script>
+            var n_tarefa=1;
+            function adicionar_tarefa(){
+                let tarefa = document.getElementById("txt-tarefa").value;
+                let divp = document.getElementById("div-tarefas");
+                divp.innerHTML+=n_tarefa+'-'+tarefa+'<br>';
+                n_tarefa++;
+            }
+            function limpar_tarefas(){
+                let divp = document.getElementById("div-tarefas");
+                divp.innerText="";
+                n_tarefa=1;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="principal">
+            <h3>LISTA DE TAREFAS</h3>
+            <input id="txt-tarefa" type="text" placeholder="Tarefa a adicionar">
+            <input id ="btn-adicionar" type="button" value="Adicionar" onclick="adicionar_tarefa()">
+            <input type="button" id="btn-limpar" value="Limpar" onclick="limpar_tarefas()">
+            <div id="div-tarefas"></div>
+        </div>
+    </body>
+</html>
